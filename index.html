@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> UI Assignment 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #ececec;
+        }
+        .col-3 {
+
+            padding: 10px;
+        }
+        .btn {
+            width: 100%;
+            height: 75px;
+            background-color: gray;
+
+        }
+        .h1 {
+            color: cornflowerblue;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="h1 text-center"> BLOCK 1
+        <form name="box">
+            <div class="row">
+                <div class="col-3">
+                    <input id="btn1" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn2" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn3" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn4" type="button" class="btn box-button1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input id="btn5" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn6" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn7" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn8" type="button" class="btn box-button1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input id="btn9" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn10" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn11" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn12" type="button" class="btn box-button1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input id="btn13" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn14" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn15" type="button" class="btn box-button1">
+                </div>
+                <div class="col-3">
+                    <input id="btn16" type="button" class="btn box-button1">
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--block 2 starts from here-->
+    <div class="h1 text-center"> BLOCK 2
+        <form name="block2">
+            <div class="row">
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+                <div class="col-3">
+                    <input type="button" class="btn box-button2">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var valblock1 = document.getElementsByClassName('box-button1');
+    var valblock2 = document.getElementsByClassName('box-button2');
+    var srcElementTop, srcElementBottom, boxclr1, boxclr2,clr1,clr2;
+    var arrayElementsTop = [];
+    var arrayElementsBottom = [];
+
+    $(document).ready(function () {
+        var colors = ['red', 'green', 'blue', 'orange', 'yellow', 'aqua', 'purple', 'pink', 'violet',
+            'silver', 'white', 'tan', 'teal', 'brown', 'lime', 'tomato'];
+        var aBlockColor = shuffle(colors.slice());
+        var bBlockColor = shuffle(colors.slice());
+        for(var i=0; i < valblock1.length; i++)
+        {
+            valblock1[i].value = aBlockColor[i];
+            valblock2[i].value = bBlockColor[i];
+            hidden(valblock1.value);
+            hidden(valblock2.value);
+
+        }
+    });
+    // to randomly generate background color for buttons
+    function getColor() {
+//         colors = ['red', 'green', 'blue', 'orange', 'yellow', 'aqua', 'purple', 'pink', 'violet',
+//            'green', 'white', 'tan', 'teal', 'brown', 'lime', 'tomato'];
+        var color = colors[Math.floor(Math.random() * colors.length)];
+        return color;
+    }
+
+    function shuffle(a) {
+        for (var i = a.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+
+
+
+    // to enable and disable button elements and button arrays
+    function disableElements(elements, isFlag) {
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].disabled = isFlag;
+        }
+    }
+    // block 1 click event
+    for (var i = 0; i < valblock1.length; i++) {
+        valblock1[i].addEventListener('click', function (e) {
+            disableElements(valblock2, false);
+            var source = e.source || e.srcElement;
+            srcElementTop = source;
+            // to match array values
+            var found = arrayElementsTop.find(function (element) {
+                return element == srcElementTop;
+            });
+            if(!srcElementTop.style.backgroundColor)
+            {
+                clr1 = getColor();
+            }
+            if (!found) {
+//              var clr1 = getColor();
+                source.value = clr1;
+                boxclr1 = clr1;
+                source.style.backgroundColor = clr1;
+                disableElements(valblock1, true);
+                disableElements(arrayElementsBottom, true);
+            }
+            else {
+                disableElements(arrayElementsTop, true);
+                disableElements(valblock2, true);
+            }
+        });
+    }
+    // block 2 click event
+    for (var i = 0; i < valblock2.length; i++) {
+        valblock2[i].addEventListener('click', function (e) {
+            var source = e.source || e.srcElement;
+            srcElementBottom = source;
+            // to match array values
+            var found = arrayElementsBottom.find(function (element) {
+                return element == srcElementBottom;
+            });
+            if(!srcElementBottom.style.backgroundColor)
+            {
+                clr2 = getColor();
+            }
+            if (!found) {
+//                var clr2 = getColor();
+                source.value = clr2;
+                boxclr2 = clr2;
+                source.style.backgroundColor = clr2;
+                disableElements(valblock2, true);
+            }
+            else {
+                disableElements(arrayElementsBottom, true);
+
+            }
+            if (boxclr1 == boxclr2) {
+                disableElements(valblock1, false);
+                arrayElementsTop.push(srcElementTop);
+                arrayElementsBottom.push(srcElementBottom);
+                disableElements(arrayElementsTop, true);
+            }
+            else {
+                srcElementTop.style.backgroundColor = 'gray';
+                srcElementTop.value = '';
+                srcElementBottom.style.backgroundColor = 'gray';
+                srcElementBottom.value = '';
+                disableElements(valblock2, true);
+                disableElements(valblock1, false);
+                disableElements(arrayElementsTop, true);
+                disableElements(arrayElementsBottom, true);
+            }
+        });
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+</html>
